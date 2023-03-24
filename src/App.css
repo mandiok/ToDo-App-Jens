@@ -1,38 +1,61 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-image: -webkit-linear-gradient(65deg, #4cbb40 50%, #d5d6d8 50%);;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
+  padding-top: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.darkMode{
+  background-image: -webkit-linear-gradient(65deg, #1c2e1a 50%, #202020 50%);;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 50px;
+  color: beige;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.list {
+  width: 35vw;
+}
+
+.buttonChange {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.buttonDelete {
+  position: absolute;
+  right: 45px;
+  top: 5px;
+}
+
+.buttonToggle {
+  position: absolute;
+  right: 80px;
+  top: 5px;
+}
+
+.checkedTodo {
+  text-decoration: line-through;
+  text-decoration-color: #ff0505;
+  text-decoration-thickness: 2px;
+}
+
+.darkModeInput {
+  background-color: #5e5656;
+  color: azure;
+}
+
+.darkModeInput::placeholder{
+  color: azure;
 }

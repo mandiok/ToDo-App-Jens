@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import Headline from './components/Headline';
+import Todo from './components/Todo';
+import Import from './components/Input';
+import React, { useState } from 'react';
+import Counter from './components/Counter';
+import useLocalStorage from './components/customHooks/useLocalStorage';
+import Switch from './components/Darkmode';
 
 function App() {
+
+const key = "todos"; 
+
+const [todos, setTodos] = useLocalStorage(key);
+
+const [darkMode, setDarkMode] = useState(true);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={darkMode ? 'App' : 'darkMode'}>
+      <Switch darkMode = {darkMode} setDarkMode = {setDarkMode}/>
+      <Headline />
+      <Counter counter={todos}/>
+      <Todo todos = {todos} setTodos={setTodos} darkMode = {darkMode}/>
+      <Import todos={todos} setTodos={setTodos} darkMode = {darkMode}/>
     </div>
   );
 }
 
 export default App;
+
+
+
